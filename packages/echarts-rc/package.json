@@ -1,0 +1,32 @@
+{
+  "name": "echarts-rc",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "prepack": "json -f package.json -I -e \"delete this.devDependencies; delete this.dependencies\"",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "copy": "cp *.tgz ../../sites/echarts-example"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-is": "^18.2.0",
+    "styled-components": "^5.3.5"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/echarts-rc.umd.js",
+  "module": "./dist/echarts-rc.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/echarts-rc.es.js",
+      "require": "./dist/echarts-rc.umd.js"
+    }
+  }
+}
